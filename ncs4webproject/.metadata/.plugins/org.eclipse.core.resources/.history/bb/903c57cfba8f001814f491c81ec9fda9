@@ -1,0 +1,18 @@
+package com.naver.jaebee2002;
+
+import java.util.Arrays;
+
+public class PasswordTestMain {
+	public static void main(String[] args) {
+		long n = 121;
+		long answer = 0;
+	      answer = (long) Math.sqrt(n);
+	      if(answer*answer == n){
+	          answer++;
+	          answer = answer*answer;
+	      }
+	      int[] r = {0,0,0,0};
+	      r[0] = 1;
+	      System.out.println(r[0]);
+	}
+}

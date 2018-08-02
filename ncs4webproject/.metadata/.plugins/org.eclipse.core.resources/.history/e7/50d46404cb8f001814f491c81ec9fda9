@@ -1,0 +1,21 @@
+package com.naver.jaebee2002;
+
+public class PasswordTestMain {
+	public static void main(String[] args) {
+		long n = 121;
+		long answer = 0;
+	      answer = (long) Math.sqrt(n);
+	      if(answer*answer == n){
+	          answer++;
+	          answer = answer*answer;
+	      }
+	      int[][] r = {{0,0,0,0},{1,2,3,4},{5,6,7,8}};
+	      for(int i=0; i<r.length; i++) {
+	    	  for(int j=0; j<r[i].length; j++) {
+	    		  if(r[i][j]==8) {
+	    			  System.out.println(i+""+j);
+	    		  }
+	    	  }
+	      }
+	}
+}

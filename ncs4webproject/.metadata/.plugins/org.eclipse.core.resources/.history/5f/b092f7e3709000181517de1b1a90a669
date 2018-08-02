@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.naver.jaebee2002.service.DistributionDao">
+	<resultMap type="com.naver.jaebee2002.entities.Balance" id="memberMap">
+	</resultMap>
+	<select id="selectAll" resultMap="memberMap">
+		select * from balance where yyyy = #{yyyy} order by vendname
+	</select>
+	<select id="selectOne" parameterType="hashMap" resultMap="memberMap">
+		select * from balance where vendcode = #{vendcode} and yyyy = #{yyyy}
+	</select>
+	<update id="updateRow" parameterType="hashMap">
+		update balance set vendname = #{vendname, jdbcType=VARCHAR}, preyybalance = #{preyybalance, jdbcType=INTEGER}, prebalance01 = #{prebalance01, jdbcType=INTEGER},
+		prebalance02 = #{prebalance02, jdbcType=INTEGER}, prebalance03 = #{prebalance03, jdbcType=INTEGER}, prebalance04 = #{prebalance04, jdbcType=INTEGER}, prebalance05 = #{prebalance05, jdbcType=INTEGER}, 
+		prebalance06 = #{prebalance06, jdbcType=INTEGER}, prebalance07 = #{prebalance07, jdbcType=INTEGER}, prebalance08 = #{prebalance08, jdbcType=INTEGER}, prebalance09 = #{prebalance09, jdbcType=INTEGER}, 
+		prebalance10 = #{prebalance10, jdbcType=INTEGER}, prebalance11 = #{prebalance11, jdbcType=INTEGER}, prebalance12 = #{prebalance12, jdbcType=INTEGER}, deal01 = #{deal01, jdbcType=INTEGER},
+		deal02 = #{deal02, jdbcType=INTEGER}, deal03 = #{deal03, jdbcType=INTEGER}, deal04 = #{deal04, jdbcType=INTEGER}, deal05 = #{deal05, jdbcType=INTEGER}, deal06 = #{deal06, jdbcType=INTEGER}, deal07 = #{deal07, jdbcType=INTEGER},
+		deal08 = #{deal08, jdbcType=INTEGER}, deal09 = #{deal09, jdbcType=INTEGER}, deal10 = #{deal10, jdbcType=INTEGER}, deal11 = #{deal11, jdbcType=INTEGER}, deal12 = #{deal12, jdbcType=INTEGER}, pay01 = #{pay01, jdbcType=INTEGER}, 
+		pay02 = #{pay02, jdbcType=INTEGER}, pay03 = #{pay03, jdbcType=INTEGER}, pay04 = #{pay04, jdbcType=INTEGER}, pay05 = #{pay05, jdbcType=INTEGER}, pay06 = #{pay06, jdbcType=INTEGER}, pay07 = #{pay07, jdbcType=INTEGER},
+		pay08 = #{pay08, jdbcType=INTEGER}, pay09 = #{pay09, jdbcType=INTEGER}, pay10 = #{pay10, jdbcType=INTEGER}, pay11 = #{pay11, jdbcType=INTEGER}, pay12 = #{pay12, jdbcType=INTEGER}, balance01 = #{balance01, jdbcType=INTEGER},
+		balance02 = #{balance02, jdbcType=INTEGER}, balance03 = #{balance03, jdbcType=INTEGER}, balance04 = #{balance04, jdbcType=INTEGER}, balance05 = #{balance05, jdbcType=INTEGER}, balance06 = #{balance06, jdbcType=INTEGER},
+		balance07 = #{balance07, jdbcType=INTEGER}, balance08 = #{balance08, jdbcType=INTEGER}, balance09 = #{balance09, jdbcType=INTEGER}, balance10 = #{balance10, jdbcType=INTEGER}, balance11 = #{balance11, jdbcType=INTEGER},
+		balance12 = #{balance12, jdbcType=INTEGER}, balance = #{balance, jdbcType=INTEGER}, paytot = #{paytot, jdbcType=INTEGER}, dealtot = #{dealtot, jdbcType=INTEGER} where vendcode = #{vendcode} and yyyy = #{yyyy}
+	</update>
+	<delete id="deleteRow" parameterType="String">
+  		delete from balance where vendcode=#{vendcode}
+  	</delete>
+  	<insert id="buyBalanceAdd" parameterType="hashMap">
+  		insert into balance(yyyy,vendcode,vendname,${balancecolumn},${dealcolumn},balance)values(#{yyyy,jdbcType=VARCHAR},#{vendcode,jdbcType=VARCHAR},#{vendname,jdbcType=VARCHAR},#{price} * #{qty}, #{price} * #{qty},#{price} * #{qty}) on duplicate key update
+  		${dealcolumn} = ${dealcolumn} + #{price} * #{qty}, ${balancecolumn} = ${balancecolumn} + #{price} * #{qty}, balance = balance + #{price} * #{qty}
+  	</insert>
+  	<update id="buyBalanceSub" parameterType="hashMap">
+  		update balance set ${dealcolumn} = ${dealcolumn} - (#{beforeprice} * #{beforeqty}),
+  		${balancecolumn} = ${balancecolumn} - (#{beforeprice} * #{beforeqty}), balance = balance - (#{beforeprice} * #{beforeqty})
+  		where yyyy = #{yyyy} and vendcode = #{vendcode}
+  	</update>
+  	<insert id="payBalanceAdd" parameterType="hashMap">
+  		insert into balance(yyyy,vendcode,vendname,${balancecolumn},${paycolumn},balance)values(#{yyyy,jdbcType=VARCHAR},#{vendcode,jdbcType=VARCHAR},#{vendname,jdbcType=VARCHAR}, -#{amount}, #{amount}, -#{amount}) on duplicate key update
+  		${paycolumn} = ${paycolumn} + #{amount}, ${balancecolumn} = ${balancecolumn} - #{amount}, balance = balance - #{amount}
+  	</insert>
+  	<update id="payBalanceSub" parameterType="hashMap">
+  		update balance set ${paycolumn} = ${paycolumn} - (#{beforeprice} * #{beforeqty}),
+  		${balancecolumn} = ${balancecolumn} - (#{beforeprice} * #{beforeqty}), balance = balance - (#{beforeprice} * #{beforeqty})
+  		where yyyy = #{yyyy} and vendcode = #{vendcode}
+  	</update>
+</mapper>

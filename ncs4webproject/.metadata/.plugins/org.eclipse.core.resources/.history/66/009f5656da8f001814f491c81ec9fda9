@@ -1,0 +1,11 @@
+package com.naver.jaebee2002.service;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import com.naver.jaebee2002.entities.Pay;
+
+public interface PayDao {
+	void insertRow(Pay pay);
+	ArrayList<Pay> selectAll(HashMap paysearch);
+}

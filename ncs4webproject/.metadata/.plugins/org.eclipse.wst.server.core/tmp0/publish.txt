@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Tue Jul 31 11:22:24 KST 2018
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\IT\\.m2\\repository\\org\\springframework\\spring-web\\4.3.5.RELEASE\\spring-web-4.3.5.RELEASE.jar=D\:\\UTIL\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\ncs4project\\WEB-INF\\lib\\spring-web-4.3.5.RELEASE.jar
+org.eclipse.jst.jee.server\:ncs4project=D\:\\UTIL\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\ncs4project

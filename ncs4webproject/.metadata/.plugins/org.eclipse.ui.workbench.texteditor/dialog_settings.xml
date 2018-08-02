@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="buynew" key="selection"/>
+		<item value="true" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="buynew"/>
+			<item value="buy"/>
+			<item value="어음"/>
+			<item value="현금"/>
+			<item value="check"/>
+			<item value="cash"/>
+			<item value="지불"/>
+			<item value="거래"/>
+			<item value="pay"/>
+			<item value="deal"/>
+			<item value="01"/>
+			<item value="Buy"/>
+			<item value="detail"/>
+			<item value="buyprice"/>
+			<item value="productcode"/>
+		</list>
+		<list key="replacehistory">
+			<item value="pay"/>
+			<item value="기타"/>
+			<item value="카드"/>
+			<item value="etc"/>
+			<item value="card"/>
+			<item value="어음"/>
+			<item value="현금"/>
+			<item value="check"/>
+			<item value="cash"/>
+			<item value="12"/>
+			<item value="11"/>
+			<item value="10"/>
+			<item value="09"/>
+			<item value="08"/>
+			<item value="07"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="288" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="390" key="DIALOG_HEIGHT"/>
+		<item value="1313" key="DIALOG_X_ORIGIN"/>
+		<item value="104" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

@@ -1,0 +1,16 @@
+package com.naver.jaebee2002.service;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import com.naver.jaebee2002.entities.Balance;
+import com.naver.jaebee2002.entities.Buy;
+
+public interface DistributionDao {
+	int updateRow(Balance balance);
+	int deleteRow(String vendcode);
+	ArrayList<Balance> selectAll(Balance balance);
+	Balance selectOne(HashMap rollkey);
+	void buyBalanceAdd(Buy buy);
+	void buyBalanceSub(Buy buy);
+}

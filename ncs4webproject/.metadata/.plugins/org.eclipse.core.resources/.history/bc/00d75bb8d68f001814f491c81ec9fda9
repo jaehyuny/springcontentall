@@ -1,0 +1,10 @@
+package com.naver.jaebee2002.service;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import com.naver.jaebee2002.entities.Buy;
+
+public interface PayDao {
+	void insertRow(Pay pay);
+}
