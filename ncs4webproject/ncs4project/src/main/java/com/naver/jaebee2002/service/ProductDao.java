@@ -1,6 +1,7 @@
 package com.naver.jaebee2002.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.naver.jaebee2002.entities.Buy;
 import com.naver.jaebee2002.entities.Product;
@@ -14,4 +15,7 @@ public interface ProductDao {
 	Product selectOne(String code);
 	void buyProductAdd(Buy buy);
 	void buyProductStockSub(Buy buy);
+	void yyyyfinalProduct(HashMap map);
+	void mmfinalProduct();
+	void ddfinalProduct();
 }

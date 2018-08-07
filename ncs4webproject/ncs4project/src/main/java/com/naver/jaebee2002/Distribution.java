@@ -34,6 +34,7 @@ import com.naver.jaebee2002.entities.Buy;
 import com.naver.jaebee2002.entities.BuySearchBean;
 import com.naver.jaebee2002.entities.Pay;
 import com.naver.jaebee2002.entities.Product;
+import com.naver.jaebee2002.entities.RadioFinal;
 import com.naver.jaebee2002.entities.Vender;
 import com.naver.jaebee2002.service.BuyDao;
 import com.naver.jaebee2002.service.DistributionDao;
@@ -363,5 +364,48 @@ public class Distribution {
 			// TODO: handle exception
 		}
 		return "distribution/jfreechart_view";
+	}
+	@RequestMapping(value = "/finalform", method = RequestMethod.GET)
+	public String finalForm(Model model) {
+		ArrayList<String> yyyys = new ArrayList<String>();
+		SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
+		String date = sm.format(new Date());
+		int baseyyyy = Integer.parseInt(date.substring(0,4));
+		yyyys.add((baseyyyy - 1)+"");
+		yyyys.add(baseyyyy +"");
+		yyyys.add((baseyyyy + 1)+"");
+		model.addAttribute("yyyys", yyyys);
+		String curyyyy = date.substring(0,4);
+		String curmm = date.substring(5,7);
+		String curdd = date.substring(8,10);
+		model.addAttribute("curyyyy", curyyyy);
+		model.addAttribute("curmm", curmm);
+		model.addAttribute("curdd", curdd);
+		return "distribution/final_form";
+	}
+	@RequestMapping(value = "/finaljob", method = RequestMethod.POST)
+	public String finalJob(@ModelAttribute RadioFinal radiofinal) {
+		ProductDao prodao = sqlSession.getMapper(ProductDao.class);
+//		if(radiofinal.getFinaloption().equals("yyyy")) {
+//			HashMap map = new HashMap();
+//			String sql = "product" + radiofinal.getFinalyyyy();
+//			map.put("sql", sql);
+//			prodao.yyyyfinalProduct(map);
+//		}else if(radiofinal.getFinaloption().equals("mm")) {
+//			prodao.mmfinalProduct();
+//		}else {
+//			prodao.ddfinalProduct();
+//		}
+		DistributionDao disdao = sqlSession.getMapper(DistributionDao.class);
+		if(radiofinal.getFinaloption().equals("yyyy")) {
+			ArrayList<Balance> balances = disdao.balanceListYYYY(radiofinal.getFinalyyyy());
+			disdao.yyyyfinalBalance(balances);
+		}else if(radiofinal.getFinaloption().equals("mm")) {
+			String mmplus = String.format("%02d", Integer.parseInt(radiofinal.getFinalmm())+1);
+			radiofinal.setPrecolumnname("prebalance"+mmplus);
+			radiofinal.setCurcolumnname("balance"+mmplus);
+			disdao.mmfinalBalance(radiofinal);
+		}
+		return "redirect:index";
 	}
 }

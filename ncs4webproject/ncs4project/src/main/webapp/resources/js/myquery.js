@@ -614,4 +614,10 @@ $(document).ready(function() {
 			}
 		});
 	});
+	$('#finalsave').on('click', function(){
+		$('#finalModal').modal('show');
+		$('.final_modal_btn1').on('click', function() {
+			$('#final_form').submit();
+		});
+	});
 });

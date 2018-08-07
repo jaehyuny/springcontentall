@@ -2,12 +2,16 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="buynew" key="selection"/>
+		<item value="19" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="19"/>
+			<item value="pay"/>
+			<item value="finalupdate"/>
+			<item value="balance"/>
 			<item value="buynew"/>
 			<item value="buy"/>
 			<item value="어음"/>
@@ -16,15 +20,13 @@
 			<item value="cash"/>
 			<item value="지불"/>
 			<item value="거래"/>
-			<item value="pay"/>
 			<item value="deal"/>
 			<item value="01"/>
 			<item value="Buy"/>
-			<item value="detail"/>
-			<item value="buyprice"/>
-			<item value="productcode"/>
 		</list>
 		<list key="replacehistory">
+			<item value="20"/>
+			<item value="final"/>
 			<item value="pay"/>
 			<item value="기타"/>
 			<item value="카드"/>
@@ -38,8 +40,6 @@
 			<item value="11"/>
 			<item value="10"/>
 			<item value="09"/>
-			<item value="08"/>
-			<item value="07"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

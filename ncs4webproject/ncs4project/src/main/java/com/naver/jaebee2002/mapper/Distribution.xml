@@ -75,4 +75,13 @@
   		${balancecolumn} = ${balancecolumn} + #{beforeamount}, balance = balance + #{beforeamount}
   		where yyyy = #{yyyy} and vendcode = #{vendcode}
   	</update>
+  	<insert id="yyyyfinalBalance" parameterType="hashmap">
+  		insert into balance(yyyy,vendcode,vendname,preyybalance,balance)values
+  		<foreach collection="list" item="balances" separator=",">
+  			(convert(#{balances.yyyy},unsigned)+1,#{balances.vendcode},#{balances.vendname},#{balances.balance},#{balances.balance})
+  		</foreach>
+  	</insert>
+  	<update id="mmfinalBalance" parameterType="hashmap">
+  		update balance set ${precolumnname}=balance, ${curcolumnname}=balance where yyyy=#{finalyyyy}
+  	</update>
 </mapper>

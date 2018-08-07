@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.naver.jaebee2002.entities.Board"/>
 <fullyQualifiedTypeName name="com.naver.jaebee2002.service.BoardDao"/>
 <fullyQualifiedTypeName name="java.io.BufferedOutputStream"/>
 <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
@@ -39,7 +38,6 @@
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
 <fullyQualifiedTypeName name="lombok.Data"/>
-<fullyQualifiedTypeName name="com.naver.jaebee2002.service.ProductDao"/>
 <fullyQualifiedTypeName name="com.naver.jaebee2002.service.VenderDao"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
@@ -48,8 +46,6 @@
 <fullyQualifiedTypeName name="com.naver.jaebee2002.entities.BuySearchBean"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
 <fullyQualifiedTypeName name="com.naver.jaebee2002.entities.Pay"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
@@ -60,4 +56,8 @@
 <fullyQualifiedTypeName name="org.jfree.chart.ChartUtilities"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 <fullyQualifiedTypeName name="org.jfree.chart.plot.PiePlot"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
+<fullyQualifiedTypeName name="com.naver.jaebee2002.entities.RadioFinal"/>
+<fullyQualifiedTypeName name="com.naver.jaebee2002.service.ProductDao"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,58 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form id="final_form" name="final_form" action="finaljob" method="post">
+		<div class="container" style="text-align:center">
+		${yyyys}
+			<div class="btn-group" data-toggle="buttons" style="margin-top: 30px">
+				<label class="btn btn-primary">
+					<input type="radio" name="options" id="option1" value="dd" autocomplete="off" checked>일일
+				</label>
+				<label class="btn btn-primary">
+					<input type="radio" name="options" id="option2" value="mm" autocomplete="off">월말
+				</label>
+				<label class="btn btn-primary">
+					<input type="radio" name="options" id="option3" value="yyyy" autocomplete="off">연말
+				</label>
+			</div>
+			<div class="row" style="margin-top: 30px">
+				<div class="col-md-3"></div>
+				<div class="col-md-3">
+					<button type="button" id="finalsave" class="btn btn-primary btn-block">확인</button>
+				</div>
+				<div class="col-md-3">
+					<button type="button" onclick="location.href='index'" id="finalcancel" class="btn btn-success btn-block">취소</button>
+				</div>
+				<div class="col-md-3"></div>
+			</div>
+			<!-- Modal -->
+			<div id="finalModal" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header" style="background-color: #9999cc">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title"></h4>
+						</div>
+						<div class="final-modal-body">
+							<p>마감하시겠습니까?</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-success final_modal_btn1" data-dismiss="modal">확인</button>
+							<button type="button" class="btn btn-success final_modal_btn2" data-dismiss="modal">취소</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

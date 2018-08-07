@@ -40,4 +40,17 @@
   	<update id="buyProductStockSub" parameterType="hashMap">
   		update product set stock = stock - #{beforeqty}, ${procolumn} = ${procolumn} - ${beforeqty} where code=#{beforeprocode}
   	</update>
+  	<update id="ddfinalProduct">
+  		update product set preddstock = stock
+  	</update>
+  	<update id="mmfinalProduct">
+  		update product set preddstock = stock, premmstock = stock
+  	</update>
+  	<update id="yyyyfinalProduct" parameterType="hashMap">
+  		create table ${sql} as select * from product;
+  		update product set preddstock = stock, premmstock = stock, preyystock = stock,
+  		buy01 = 0,buy02 = 0,buy03 = 0,buy04 = 0,buy05 = 0,buy06 = 0,buy07 = 0,buy08 = 0,
+  		buy09 = 0,buy10 = 0,buy11 = 0,buy12 = 0,sale01 =0,sale02 =0,sale03 =0,sale04 =0,
+  		sale05 =0,sale06 =0,sale07 =0,sale08 =0,sale09 =0,sale10 =0,sale11 =0,sale12 =0;
+  	</update>
 </mapper>

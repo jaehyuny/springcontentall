@@ -82,7 +82,7 @@
 					<i class="fas fa-hourglass-half" style="font-size: 150px"></i>
 				</div>
 				<div class="col-md-4">
-					<i class="fas fa-hourglass-end" style="font-size: 150px"></i>
+					<a href="finalform" style="color: #292929"><i class="fas fa-hourglass-end" style="font-size: 150px"></i></a>
 				</div>
 			</div>
 		</div>

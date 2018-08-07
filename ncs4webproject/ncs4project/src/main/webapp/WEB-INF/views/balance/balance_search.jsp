@@ -47,13 +47,13 @@
 				<div class="col-md-2" style="text-align: center">
 <!-- 					<input type="text" class="form-control" id="yyyy" name="yyyy" style="ime-mode:disabled" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' maxlength="4" required="true"> -->
 					<select id="yyyy" name="yyyy" class="form-control">
-					<c:forEach begin="1" end="18" var="x" step="1">
+					<c:forEach begin="1" end="19" var="x" step="1">
 						<c:choose>
 							<c:when test="${x <= 9}">
-								<option value="20${19-x}">20${19-x}년</option>
+								<option value="20${20-x}">20${20-x}년</option>
 							</c:when>
 							<c:otherwise>
-								<option value="200${19-x}">200${19-x}년</option>
+								<option value="200${20-x}">200${20-x}년</option>
 							</c:otherwise>
 						</c:choose>
 					</c:forEach>
